@@ -23,7 +23,7 @@ pipeline {
         stage('Generate PMD & JavaDoc') {
             steps {
                 // 此时本地仓库已经有了依赖，再跑 pmd 并且彻底跳过 javadoc，绝对是一路绿灯！
-                bat 'mvn pmd:pmd -DskipTests -Dpmd.failOnViolation=false -Dmaven.javadoc.skip=true'
+                bat 'mvn pmd:pmd javadoc:javadoc -DskipTests -Dpmd.failOnViolation=false -Ddoclint=none'
             }
         }
     }
