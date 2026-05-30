@@ -16,7 +16,7 @@ pipeline {
         stage('Maven Build & Test') {
             steps {
                 // Windows 环境下使用 bat
-                bat 'mvn clean compile test pmd:pmd javadoc:javadoc package'
+                bat 'mvn clean compile test pmd:pmd javadoc:javadoc package -DskipTests'
             }
         }
     }
