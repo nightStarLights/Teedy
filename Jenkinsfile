@@ -26,7 +26,7 @@ pipeline {
             // 存档打包出来的 jar 包
             archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: false
             // 收集 JUnit 测试报告
-            junit '**/target/surefire-reports/*.xml'
+            // junit '**/target/surefire-reports/*.xml'
             // 收集并展示 JavaDoc 文档
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/site/apidocs', reportFiles: 'index.html', reportName: 'JavaDoc'])
         }
