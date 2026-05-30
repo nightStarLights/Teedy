@@ -34,7 +34,7 @@ pipeline {
             archiveArtifacts artifacts: '**/target/*.?ar', allowEmptyArchive: true
             
             // 展示 JavaDoc 标签页（加了 allowMissing: true，防止 Jenkins 报错）
-            publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/site/apidocs', reportFiles: 'index.html', reportName: 'JavaDoc'])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'docs-core/target/site/apidocs', reportFiles: 'index.html', reportName: 'JavaDoc'])
         }
     }
 }
